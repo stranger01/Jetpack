@@ -1,4 +1,4 @@
-package co.tk.car;
+package com.tk.car;
 
 import org.junit.Test;
 

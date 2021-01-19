@@ -1,4 +1,4 @@
-package co.tk.car;
+package com.tk.car;
 
 import android.content.Context;
 
@@ -21,6 +21,7 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("co.tk.car", appContext.getPackageName());
+
+        assertEquals("com.optic.uberclone", appContext.getPackageName());
     }
 }

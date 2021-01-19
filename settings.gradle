@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Viajes"
+rootProject.name='UberClone'

@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/icon_car"
+            android:src="@drawable/icon_uber_clone"
             android:layout_marginTop="50dp"
             android:layout_gravity="center"/>
 

@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "1031504677586",
-    "project_id": "mi-viajecito---boyacasa",
-    "storage_bucket": "mi-viajecito---boyacasa.appspot.com"
+    "project_number": "624308636993",
+    "firebase_url": "https://tkar-f49ec-default-rtdb.firebaseio.com",
+    "project_id": "tkar-f49ec",
+    "storage_bucket": "tkar-f49ec.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1031504677586:android:f043892661a1ccbe9a3b0b",
+        "mobilesdk_app_id": "1:624308636993:android:475e9b1af6e872cd2565c0",
         "android_client_info": {
-          "package_name": "co.tk.car"
+          "package_name": "com.tk.car"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1031504677586-db8okjijsvgr9vgioa9jkc5155t2rgnk.apps.googleusercontent.com",
+          "client_id": "624308636993-876v1nof7elfuvldkatdan0d5p901tt6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBUEiYpBVXIuJTl5QqWP5OxkgESV3WhUF0"
+          "current_key": "AIzaSyCQUXAqQ2MA-b7EF2lssdxtZM4tDnYELjs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1031504677586-db8okjijsvgr9vgioa9jkc5155t2rgnk.apps.googleusercontent.com",
+              "client_id": "624308636993-876v1nof7elfuvldkatdan0d5p901tt6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
