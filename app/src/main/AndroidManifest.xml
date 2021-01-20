@@ -11,14 +11,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.tk.car.LoginActivity"
-            android:parentActivityName="com.tk.car.SelectOptionAuthActivity"
-            ></activity>
-        <activity android:name="com.tk.car.RegisterActivity"
-            android:parentActivityName="com.tk.car.SelectOptionAuthActivity"/>
-        <activity android:name="com.tk.car.SelectOptionAuthActivity"
-            android:parentActivityName="com.tk.car.MainActivity"/>
-        <activity android:name="com.tk.car.MainActivity">
+        <activity android:name=".activities.driver.RegisterDriverActivity"></activity>
+        <activity
+            android:name=".activities.LoginActivity"
+            android:parentActivityName=".activities.SelectOptionAuthActivity" />
+        <activity
+            android:name=".activities.client.RegisterActivity"
+            android:parentActivityName=".activities.SelectOptionAuthActivity" />
+        <activity
+            android:name=".activities.SelectOptionAuthActivity"
+            android:parentActivityName=".activities.MainActivity" />
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
