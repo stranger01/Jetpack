@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.tk.car.R;
+import com.tk.car.activities.driver.MapDriverActivity;
 import com.tk.car.models.Client;
 import com.tk.car.providers.AuthProvider;
 import com.tk.car.providers.ClientProvider;
@@ -102,8 +104,10 @@ public class RegisterActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
 
-                    Toast.makeText(RegisterActivity.this, " se pudo crear el cliente", Toast.LENGTH_SHORT).show();
 
+                    Intent intent = new Intent(getApplicationContext(), MapClientActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
                 }
                 else {
                     Toast.makeText(RegisterActivity.this, "No se pudo crear el cliente", Toast.LENGTH_SHORT).show();
