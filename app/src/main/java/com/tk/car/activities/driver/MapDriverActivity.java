@@ -25,25 +25,13 @@ public class MapDriverActivity extends AppCompatActivity implements OnMapReadyCa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_driver);
 
-//        mBtnConnect = findViewById(R.id.btnConnect);
-//        mAuthProvider = new AuthProvider();
+
 
         mMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mMapFragment.getMapAsync(this);
 
 
-//        logOut.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                mAuthProvider.logout();
-//
-//                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-//                startActivity(intent);
-//                finish();
-//
-//            }
-//        });
+
     }
 
     @Override
