@@ -1,4 +1,6 @@
-package com.tk.car.activities;
+package com.optic.uberclone.activities;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -6,12 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.auth.FirebaseAuth;
-import com.tk.car.R;
-import com.tk.car.activities.client.MapClientActivity;
-import com.tk.car.activities.driver.MapDriverActivity;
+import com.optic.uberclone.R;
+import com.optic.uberclone.activities.client.MapClientActivity;
+import com.optic.uberclone.activities.driver.MapDriverActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,16 +53,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-
             String user = mPref.getString("user", "");
             if (user.equals("client")) {
-                Intent intent = new Intent(this, MapClientActivity.class);
+                Intent intent = new Intent(MainActivity.this, MapClientActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-            } else {
-                Intent intent = new Intent(this, MapDriverActivity.class);
+            }
+            else {
+                Intent intent = new Intent(MainActivity.this, MapDriverActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }

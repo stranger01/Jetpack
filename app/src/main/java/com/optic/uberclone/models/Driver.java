@@ -1,4 +1,4 @@
-package com.tk.car.models;
+package com.optic.uberclone.models;
 
 public class Driver {
 
@@ -7,11 +7,6 @@ public class Driver {
     String email;
     String vehicleBrand;
     String vehiclePlate;
-    String image;
-
-    public Driver() {
-
-    }
 
     public Driver(String id, String name, String email, String vehicleBrand, String vehiclePlate) {
         this.id = id;
@@ -19,14 +14,6 @@ public class Driver {
         this.email = email;
         this.vehicleBrand = vehicleBrand;
         this.vehiclePlate = vehiclePlate;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public String getId() {

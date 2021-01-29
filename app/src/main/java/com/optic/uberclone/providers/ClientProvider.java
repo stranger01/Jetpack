@@ -1,9 +1,9 @@
-package com.tk.car.providers;
+package com.optic.uberclone.providers;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.tk.car.models.Client;
+import com.optic.uberclone.models.Client;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,13 +23,4 @@ public class ClientProvider {
         return mDatabase.child(client.getId()).setValue(map);
     }
 
-    public Task<Void> update(Client client) {
-        Map<String, Object> map = new HashMap<>();
-        map.put("name", client.getName());
-        return mDatabase.child(client.getId()).updateChildren(map);
-    }
-
-    public DatabaseReference getClient(String idClient) {
-        return mDatabase.child(idClient);
-    }
 }

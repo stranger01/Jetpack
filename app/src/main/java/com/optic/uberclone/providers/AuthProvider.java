@@ -1,4 +1,4 @@
-package com.tk.car.providers;
+package com.optic.uberclone.providers;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -22,18 +22,6 @@ public class AuthProvider {
 
     public void logout() {
         mAuth.signOut();
-    }
-
-    public String getId() {
-        return mAuth.getCurrentUser().getUid();
-    }
-
-    public boolean existSession() {
-        boolean exist = false;
-        if (mAuth.getCurrentUser() != null) {
-            exist = true;
-        }
-        return exist;
     }
 
 }

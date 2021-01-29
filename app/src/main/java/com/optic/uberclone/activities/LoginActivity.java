@@ -1,8 +1,7 @@
-package com.tk.car.activities;
+package com.optic.uberclone.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -19,9 +18,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.tk.car.R;
-import com.tk.car.activities.client.MapClientActivity;
-import com.tk.car.activities.driver.MapDriverActivity;
+import com.optic.uberclone.R;
+import com.optic.uberclone.activities.client.MapClientActivity;
+import com.optic.uberclone.activities.driver.MapDriverActivity;
 
 import dmax.dialog.SpotsDialog;
 
@@ -44,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
         mTextInputEmail    = findViewById(R.id.textInputEmail);
         mTextInputPassword = findViewById(R.id.textInputPassword);

@@ -1,30 +1,24 @@
-package com.tk.car.activities.client;
+package com.optic.uberclone.activities.client;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.tk.car.R;
-import com.tk.car.activities.driver.MapDriverActivity;
-import com.tk.car.models.Client;
-import com.tk.car.providers.AuthProvider;
-import com.tk.car.providers.ClientProvider;
+import com.optic.uberclone.R;
+import com.optic.uberclone.models.Client;
+import com.optic.uberclone.providers.AuthProvider;
+import com.optic.uberclone.providers.ClientProvider;
 
 import dmax.dialog.SpotsDialog;
 
@@ -41,17 +35,16 @@ public class RegisterActivity extends AppCompatActivity {
 
     AlertDialog mDialog;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
 
-        mAuthProvider = new AuthProvider();
-        mClientProvider = new ClientProvider();
+       mAuthProvider = new AuthProvider();
+       mClientProvider = new ClientProvider();
 
-        mDialog = new SpotsDialog.Builder().setContext(RegisterActivity.this).setMessage("Espere un momento").build();
+       mDialog = new SpotsDialog.Builder().setContext(RegisterActivity.this).setMessage("Espere un momento").build();
 
 
         mButtonRegister = findViewById(R.id.btnRegister);
@@ -92,7 +85,6 @@ public class RegisterActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 mDialog.hide();
                 if (task.isSuccessful()) {
-
                     String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     Client client = new Client(id, name, email);
                     create(client);
@@ -109,9 +101,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-
-
-                    Intent intent = new Intent(getApplicationContext(), MapClientActivity.class);
+                    Intent intent = new Intent(RegisterActivity.this, MapClientActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 }
@@ -121,8 +111,42 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+    
+    /*
+    void saveUser(String id, String name, String email) {
+        String selectedUser = mPref.getString("user", "");
+        User user = new User();
+        user.setEmail(email);
+        user.setName(name);
 
-
-
+        if (selectedUser.equals("driver")) {
+            mDatabase.child("Users").child("Drivers").child(id).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(RegisterActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(RegisterActivity.this, "Fallo el registro", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+        else if (selectedUser.equals("client")){
+            mDatabase.child("Users").child("Clients").child(id).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(RegisterActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(RegisterActivity.this, "Fallo el registro", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+    }
+    */
+     
 
 }

@@ -1,4 +1,7 @@
-package com.tk.car.activities.driver;
+package com.optic.uberclone.activities.driver;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -7,18 +10,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.tk.car.R;
-import com.tk.car.models.Driver;
-import com.tk.car.providers.AuthProvider;
-import com.tk.car.providers.DriverProvider;
+import com.optic.uberclone.R;
+import com.optic.uberclone.models.Driver;
+import com.optic.uberclone.providers.AuthProvider;
+import com.optic.uberclone.providers.DriverProvider;
 
 import dmax.dialog.SpotsDialog;
 
@@ -106,11 +106,10 @@ public class RegisterDriverActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-
-                    Intent intent = new Intent(getApplicationContext(), MapDriverActivity.class);
+                    //Toast.makeText(RegisterDriverActivity.this, "El registro se realizo exitosamente", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(RegisterDriverActivity.this, MapDriverActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
-
                 }
                 else {
                     Toast.makeText(RegisterDriverActivity.this, "No se pudo crear el cliente", Toast.LENGTH_SHORT).show();
@@ -118,6 +117,5 @@ public class RegisterDriverActivity extends AppCompatActivity {
             }
         });
     }
-
 
 }

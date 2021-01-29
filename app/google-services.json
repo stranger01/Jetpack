@@ -8,7 +8,36 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:624308636993:android:475e9b1af6e872cd2565c0",
+        "mobilesdk_app_id": "1:624308636993:android:0921ab3e9726ce142565c0",
+        "android_client_info": {
+          "package_name": "com.optic.uberclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624308636993-876v1nof7elfuvldkatdan0d5p901tt6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQUXAqQ2MA-b7EF2lssdxtZM4tDnYELjs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624308636993-876v1nof7elfuvldkatdan0d5p901tt6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624308636993:android:818215fcd0f02f8a2565c0",
         "android_client_info": {
           "package_name": "com.tk.car"
         }

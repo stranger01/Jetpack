@@ -1,4 +1,4 @@
-package com.tk.car.models;
+package com.optic.uberclone.models;
 
 public class User {
 
